@@ -7,17 +7,64 @@
 //
 
 #import "AppDelegate.h"
+#import "MainTabBarViewController.h"
+#import "MainNavigationViewController.h"
+#import "RootViewController.h"
+#import "MapViewController.h"
+
+#import "LeftViewController.h"
+#import "RightViewController.h"
+
+//腾讯第三方登录的头文件
+#import <TencentOpenAPI/TencentOAuth.h>
 
 @interface AppDelegate ()
-
 @end
 
 @implementation AppDelegate
 
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    return [TencentOAuth HandleOpenURL:url];
+}
 
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    return [TencentOAuth HandleOpenURL:url];
+}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    RootViewController *rootVC = [[RootViewController alloc] init];
+    MainTabBarViewController *tabBarVC = [[MainTabBarViewController alloc] init];
+    
+    MainNavigationViewController *mainNavC = [[MainNavigationViewController alloc] initWithRootViewController:tabBarVC];
+    
+    
+    
+    
+    LeftViewController *leftViewController=[[LeftViewController alloc]init];
+    
+    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:leftViewController];
+    
+    leftViewController.view.backgroundColor=[UIColor colorWithRed:208/255.0 green:217/255.0 blue:93/255.0 alpha:1];
+    RightViewController *rightViewController=[[RightViewController alloc]init];
+    _sideViewController=[[YRSideViewController alloc]init];
+    _sideViewController.rootViewController=mainNavC;
+    _sideViewController.leftViewController=navVC;
+    _sideViewController.rightViewController=rightViewController;
+    _sideViewController.leftViewShowWidth = ([UIScreen mainScreen].bounds.size.width / 3) * 2;
+    _sideViewController.needSwipeShowMenu=false;//默认开启的可滑动展示
+    _sideViewController.needSwipeShowMenu = NO;
+//    动画效果可以被自己自定义，具体请看api
+    
+    
+    
+    self.window.rootViewController = _sideViewController;
+    
+    
+//    MapViewController *mapVC = [[MapViewController alloc] init];
+//    self.window.rootViewController = mapVC;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

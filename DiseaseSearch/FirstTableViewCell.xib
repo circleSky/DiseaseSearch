@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="FirstTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qhw-nm-kjC">
+                        <rect key="frame" x="149" y="8" width="69" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="69" id="2ew-A5-hdc"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <state key="normal" title="城市详情"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQ9-yX-YoG">
+                        <rect key="frame" x="252" y="6" width="36" height="34"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="63" id="T0g-up-IcK"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <state key="normal" title="收藏"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7日天气预报" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4aH-DR-rAO">
+                        <rect key="frame" x="14" y="7" width="109" height="27.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="109" id="i35-JQ-YnX"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="4aH-DR-rAO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-1" id="1Pc-JV-CE7"/>
+                    <constraint firstItem="eQ9-yX-YoG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="4SQ-tX-ELg"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="eQ9-yX-YoG" secondAttribute="bottom" constant="-2.5" id="DgE-ml-Rls"/>
+                    <constraint firstItem="4aH-DR-rAO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="6" id="Drj-Ig-o8o"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Qhw-nm-kjC" secondAttribute="bottom" constant="-2.5" id="Dtr-SU-HaS"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="4aH-DR-rAO" secondAttribute="bottom" constant="1" id="VTc-fo-JzB"/>
+                    <constraint firstItem="Qhw-nm-kjC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="enZ-Cj-J3J"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="eQ9-yX-YoG" secondAttribute="trailing" constant="11" id="rYH-a1-QzT"/>
+                    <constraint firstItem="eQ9-yX-YoG" firstAttribute="leading" secondItem="Qhw-nm-kjC" secondAttribute="trailing" constant="20" id="xEo-jr-siA"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="btn1" destination="Qhw-nm-kjC" id="dwA-Gf-agf"/>
+                <outlet property="btn2" destination="eQ9-yX-YoG" id="vkP-2e-Itb"/>
+            </connections>
+            <point key="canvasLocation" x="456" y="150"/>
+        </tableViewCell>
+    </objects>
+</document>
